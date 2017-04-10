@@ -85,7 +85,7 @@ describe('LearnJS', function () {
       var view = learnjs.buildCorrectFlash(learnjs.problems.length);
       var link = view.find('a');
 
-      expect(link.attr('href')).toEqual('');
+      expect(link.attr('href')).toEqual('#');
       expect(link.text()).toEqual("You're Finished!");
     });
   });

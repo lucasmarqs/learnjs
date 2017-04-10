@@ -37,11 +37,15 @@ learnjs.buildCorrectFlash = function (problemNumber) {
   if (problemNumber < learnjs.problems.length) {
     link.attr('href', '#problem-' + (problemNumber + 1));
   } else {
-    link.attr('href', '');
+    link.attr('href', '#');
     link.text("You're Finished!");
   }
 
   return correctFlash;
+};
+
+learnjs.landingView = function () {
+  return learnjs.template('landing-view');
 };
 
 learnjs.problemView = function (data) {
@@ -84,7 +88,9 @@ learnjs.appOnReady = function () {
 
 learnjs.showView = function (hash) {
   var routes = {
-    '#problem': learnjs.problemView
+    '#problem': learnjs.problemView,
+    '#': learnjs.landingView,
+    '': learnjs.landingView,
   };
 
   var hashParts = hash.split('-')
